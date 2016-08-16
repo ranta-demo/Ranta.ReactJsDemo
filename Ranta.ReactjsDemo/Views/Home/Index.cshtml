@@ -1,9 +1,21 @@
 ﻿@{
     ViewBag.Title = "Home";
 }
-@section scripts{
-    <script src="~/Scripts/react/react.min.js"></script>
-    <script src="~/Scripts/jsx/HelloWorld.jsx"></script>
-}
 
-<div id="area"></div>
+<script src="~/Scripts/react/react.js"></script>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Demo 1</div>
+    <div class="panel-body">
+        <div id="area1"></div>
+    </div>
+</div>
+<script src="~/Scripts/jsx/HelloWorld.jsx"></script>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">Demo 2</div>
+    <div class="panel-body">
+        @Html.ReactInitJavaScript()
+    </div>
+</div>
