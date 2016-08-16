@@ -1,28 +1,26 @@
-﻿var Cell = React.createClass({   
+﻿var HCell = React.createClass({
     render: function () {
-        var data = this.props.data;
-        return <div className="cell">{this.props.data}</div>
+        return <th title={this.props.text }>{this.props.text}</th>
     }
 });
-var Row = React.createClass({
+var BCell = React.createClass({
     render: function () {
-        return (<div className="row">
-          <Cell data={this.props.data.name} />
-          <Cell data={this.props.data.department} />
-          <Cell data={this.props.data.phone} />
-        </div>);
+        return <td title={this.props.text }>{this.props.text}</td>
     }
 });
-var Grid = React.createClass({
+var Line = React.createClass({
     render: function () {
-        var headerRow = <div className="row">
-            <Cell data="Name" />
-            <Cell data="Department" />
-            <Cell data="Phone" />
-          </div>;
-        var rows = this.props.data.map(function (rowData, index) {
-            return <Row key={index} data={rowData}>Row</Row>;
+        return (<tr><BCell text={this.props.index } /><BCell text={this.props.item.name } /><BCell text={this.props.item.department } /><BCell text={this.props.item.phone } /></tr>)
+    }
+});
+var Table = React.createClass({
+    render: function () {
+        var head = <thead><tr><HCell text="#" /><HCell text="Name" /><HCell text="Department" /><HCell text="Phone" /></tr></thead>;
+        var rows = this.props.items.map(function (rowData, index) {
+            return <Line key={index} index={index} item={rowData } />;
         });
-        return <div className="table table-bordered">{headerRow}{rows}</div>;
+        var body = <tbody>{rows}</tbody>;
+
+        return <table className="table table-bordered table-striped">{head}{body}</table>;
     }
 });
