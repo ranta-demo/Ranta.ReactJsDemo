@@ -5,6 +5,7 @@
 <script src="~/Scripts/react/react.js"></script>
 <script src="~/Scripts/react/react-dom.js"></script>
 <script src="~/Scripts/react/react-dom-server.js"></script>
+<script src="~/Scripts/jsx/HelloWorld.jsx"></script>
 <script src="~/Scripts/jsx/Grid.jsx"></script>
 
 <div class="panel panel-info">
@@ -13,13 +14,19 @@
         <div id="area1"></div>
     </div>
 </div>
-<script src="~/Scripts/jsx/HelloWorld.jsx"></script>
-
 
 <div class="panel panel-info">
     <div class="panel-heading">Demo 2</div>
     <div class="panel-body">
-        @Html.React("Table", new { items = Model })
+        @Html.React("Table", new { items = Model }, serverOnly: true)
     </div>
 </div>
-@@Html.ReactInitJavaScript()
+
+<div class="panel panel-info">
+    <div class="panel-heading">Demo 2</div>
+    <div class="panel-body">
+        @Html.React("Table", new { items = Model }, clientOnly: true)
+    </div>
+</div>
+@Html.ReactInitJavaScript()
+
