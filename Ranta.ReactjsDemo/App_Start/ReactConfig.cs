@@ -24,8 +24,10 @@ namespace Ranta.ReactjsDemo
             //	.SetLoadBabel(false)
             //	.AddScriptWithoutTransform("~/Scripts/bundle.server.js")
 
-            ReactSiteConfiguration.Configuration = new ReactSiteConfiguration()
-               .AddScript("~/Scripts/jsx/Grid.jsx");
+            ReactSiteConfiguration.Configuration.AddScript("~/Scripts/jsx/Grid.jsx");
+
+            //ReactSiteConfiguration.Configuration = new ReactSiteConfiguration()
+            //   .AddScript("~/Scripts/jsx/Grid.jsx");
         }
     }
 }
