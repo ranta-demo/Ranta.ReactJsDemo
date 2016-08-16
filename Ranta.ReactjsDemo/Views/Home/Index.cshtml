@@ -3,6 +3,9 @@
 }
 
 <script src="~/Scripts/react/react.js"></script>
+<script src="~/Scripts/react/react-dom.js"></script>
+<script src="~/Scripts/react/react-dom-server.js"></script>
+<script src="~/Scripts/jsx/Grid.jsx"></script>
 
 <div class="panel panel-info">
     <div class="panel-heading">Demo 1</div>
@@ -16,6 +19,7 @@
 <div class="panel panel-info">
     <div class="panel-heading">Demo 2</div>
     <div class="panel-body">
-        @Html.ReactInitJavaScript()
+        @Html.React("Grid", new { data = Model })
     </div>
 </div>
+@Html.ReactInitJavaScript()

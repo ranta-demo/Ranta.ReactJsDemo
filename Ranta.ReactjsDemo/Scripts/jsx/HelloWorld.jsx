@@ -6,4 +6,4 @@
 }
 });
  
-React.render( <HelloWorld name="World" />, document.getElementById('area1'));
+ReactDOM.render( <HelloWorld name="World" />, document.getElementById('area1'));
