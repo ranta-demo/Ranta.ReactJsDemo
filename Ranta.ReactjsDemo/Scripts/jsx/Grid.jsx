@@ -1,6 +1,9 @@
 ﻿var Cell = React.createClass({
     render: function () {
-        return <td title={this.props.text }>{this.props.text}</td>
+        return <td title={this.props.text } onClick={this.showText}>{this.props.text}</td>
+    },
+    showText: function (item) {
+        alert(item.target.innerText);
     }
 });
 var Line = React.createClass({
